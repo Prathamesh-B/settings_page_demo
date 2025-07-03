@@ -1,14 +1,17 @@
-import './App.css'
+import Sidebar from './components/Sidebar';
+import SettingsHeader from './components/SettingsHeader';
+import SettingsForm from './components/SettingsForm';
 
-function App() {
+const App = () => (
+  <div className="min-h-screen bg-gray-50 flex">
+    <Sidebar />
+    <main className="flex-1 flex flex-col">
+      <SettingsHeader />
+      <section className="flex-1 px-2 md:px-8 py-4">
+        <SettingsForm />
+      </section>
+    </main>
+  </div>
+);
 
-  return (
-    <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export default App;
