@@ -3,7 +3,7 @@ import SettingsHeader from './components/SettingsHeader';
 import SettingsForm from './components/SettingsForm';
 
 const App = () => (
-  <div className="min-h-screen bg-gray-50 flex">
+  <div className="min-h-screen bg-white flex">
     <Sidebar />
     <main className="flex-1 flex flex-col">
       <SettingsHeader />

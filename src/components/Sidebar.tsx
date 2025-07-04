@@ -4,7 +4,7 @@ import { CustomerIcon, DashboardIcon, MarketingIcon, ProductIcon, ReportingIcon,
 
 const Sidebar = () => {
     return (
-        <div className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col">
+        <div className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col sticky top-0  ">
             {/* App Icon */}
             <div className="p-4">
                 <div className="w-10 h-10 bg-gray-300 rounded-lg"></div>

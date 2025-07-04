@@ -13,7 +13,7 @@ const SettingsHeader = () => {
     ];
 
     return (
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-white">
             <div className="px-6 py-4">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
@@ -34,12 +34,12 @@ const SettingsHeader = () => {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex space-x-8 overflow-x-auto">
+                <div className="flex space-x-8 overflow-x-auto border-b border-gray-200">
                     {tabs.map((tab, index) => (
                         <button
                             key={index}
-                            className={`relative flex items-center space-x-2 pb-3 whitespace-nowrap text-sm font-medium transition-colors duration-200 ${tab.active
-                                    ? 'text-green-600 border-b-2 border-green-600'
+                            className={`relative flex items-center space-x-2 pb-3 whitespace-nowrap text-sm font-bold transition-colors duration-200 ${tab.active
+                                    ? 'text-green-700 border-b-2 border-green-700'
                                     : 'text-gray-500 hover:text-gray-700'
                                 }`}
                         >
