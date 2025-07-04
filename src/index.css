@@ -5,3 +5,15 @@
 @theme {
     --font-sans: "Inter", sans-serif;
 }
+
+@font-face {
+    font-family: "FranieVariableTest";
+    src: url("./fonts/FranieVariableTest-SemiBold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-franie {
+    font-family: "FranieVariableTest", sans-serif;
+}

@@ -8,7 +8,7 @@ const Sidebar = () => {
         <div className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col sticky top-0">
             {/* App Icon */}
             <div className="p-4">
-                <div className="w-10 h-10 bg-gray-300 rounded-lg"></div>
+                <div className="w-10 h-10 bg-linear-to-t from-gray-400 to-gray-100 rounded-lg"></div>
             </div>
 
             {/* Search */}
