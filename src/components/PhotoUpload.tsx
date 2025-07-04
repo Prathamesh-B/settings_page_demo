@@ -67,20 +67,20 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
     };
 
     return (
-        <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
-            <div>
-                <div className='flex items-center gap-0.5'>
-                    <label className="text-sm text-gray-700 font-bold">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 sm:gap-4 items-start border-b border-gray-200 pb-4 sm:pb-5">
+            <div className="mb-2 sm:mb-0">
+                <div className="flex items-center gap-0.5">
+                    <label className="text-sm sm:text-base text-gray-700 font-bold">
                         Your photo <span className="text-green-500 text-lg">*</span>
                     </label>
-                    <TooltipOnHover tooltipText='Add your Profile Photo' />
+                    <TooltipOnHover tooltipText="Add your Profile Photo" />
                 </div>
-                <p className="text-sm text-gray-500 mt-1">This will be displayed on your profile.</p>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">This will be displayed on your profile.</p>
             </div>
-            <div className="col-span-2 flex items-start gap-3">
-                <ProfileIcon size='lg' />
+            <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row items-start gap-3">
+                <ProfileIcon size="lg" className="w-12 h-12 sm:w-16 sm:h-16" />
                 <div
-                    className={`relative w-full border-2 rounded-lg p-6 text-center transition-colors cursor-pointer ${dragActive
+                    className={`relative w-full border-2 rounded-lg p-4 sm:p-6 text-center transition-colors cursor-pointer ${dragActive
                         ? 'border-green-700 bg-green-50'
                         : 'border-green-600 hover:border-green-700'
                         }`}
@@ -98,32 +98,32 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
                         className="hidden"
                     />
 
-                    <div className='mx-auto w-fit p-2 border-1 border-gray-300 rounded-lg mb-2 shadow'>
-                        <CloudArrowUpIcon className="h-6 w-6 text-gray-200" />
+                    <div className="mx-auto w-fit p-2 border-1 border-gray-300 rounded-lg mb-2 shadow">
+                        <CloudArrowUpIcon className="h-6 w-6 sm:h-8 sm:w-8 text-gray-200" />
                     </div>
 
-                    <div className="mt-4">
+                    <div className="mt-2 sm:mt-4">
                         <button
                             type="button"
-                            className="text-green-700 hover:text-green-700 font-bold"
+                            className="text-green-700 hover:text-green-700 font-bold text-sm sm:text-base"
                         >
                             Click to upload
                         </button>
-                        <span className="text-gray-500"> or drag and drop</span>
+                        <span className="text-gray-500 text-xs sm:text-sm"> or drag and drop</span>
                     </div>
                     <p className="text-xs text-gray-500 mt-2">
                         SVG, PNG, JPG or GIF (max. 800x400px)
                     </p>
 
                     {selectedFile && (
-                        <div className="mt-2 text-sm text-green-600">
+                        <div className="mt-2 text-xs sm:text-sm text-green-600">
                             Selected: {selectedFile.name}
                         </div>
                     )}
                 </div>
             </div>
 
-            <div></div> {/* Empty space for 4th column */}
+            <div className="hidden sm:block"></div> {/* Empty space for 4th column on larger screens */}
         </div>
     );
 };

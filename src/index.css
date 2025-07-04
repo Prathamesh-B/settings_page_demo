@@ -17,3 +17,26 @@
 .font-franie {
     font-family: "FranieVariableTest", sans-serif;
 }
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.snap-x {
+    scroll-snap-type: x mandatory;
+}
+.snap-start {
+    scroll-snap-align: start;
+}
+.touch-pan-x {
+    touch-action: pan-x;
+}
+@media (max-width: 640px) {
+    .scrollbar-hide {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+    }
+}
