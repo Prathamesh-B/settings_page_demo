@@ -1,9 +1,9 @@
 module.exports = {
-    theme: {
-        extend: {
-            fontFamily: {
-                franie: ['FranieVariableTest', 'sans-serif'],
-            },
-        },
+  theme: {
+    extend: {
+      fontFamily: {
+        franie: ["FranieVariableTest", "sans-serif"],
+      },
     },
+  },
 };
