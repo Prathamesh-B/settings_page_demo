@@ -66,7 +66,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
     return (
         <div className="bg-white">
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 border-b border-gray-200 pb-4">
+            <div className="flex items-start justify-between mb-6 border-b border-gray-200 pb-5">
                 <div>
                     <h1 className="text-xl font-semibold text-gray-900">Personal info</h1>
                     <p className="text-sm text-gray-500 mt-1">Update your photo and personal details here.</p>
@@ -80,7 +80,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                     </button>
                     <button
                         onClick={handleSave}
-                        className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+                        className="px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800"
                     >
                         Save
                     </button>
@@ -90,9 +90,9 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
             {/* Form */}
             <div className="space-y-6">
                 {/* Name Fields */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">
-                        Name <span className="text-red-500">*</span>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Name <span className="text-green-500 text-lg">*</span>
                     </label>
                     <div className="col-span-2 flex gap-4">
                         <input
@@ -114,9 +114,9 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                 </div>
 
                 {/* Email */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">
-                        Email address <span className="text-red-500">*</span>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Email address <span className="text-green-500 text-lg">*</span>
                     </label>
                     <div className="col-span-2 relative">
                         <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -124,10 +124,10 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             type="email"
                             value={formData.email}
                             onChange={(e) => handleInputChange('email', e.target.value)}
-                            className="w-full pl-10 pr-3 py-2 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                         />
                     </div>
-                    <button className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700">
+                    <button className="w-fit  h-full px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-700">
                         Verify
                     </button>
                 </div>
@@ -136,9 +136,9 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                 <PhotoUpload />
 
                 {/* Password Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
                     <div>
-                        <h3 className="text-sm font-medium text-gray-700 mb-2">Change Password</h3>
+                        <h3 className="text-sm font-bold text-gray-700 mb-2 ">Change Password</h3>
                         <p className="text-sm text-gray-500 mb-4">Your new password must be different to previously used passwords.</p>
                     </div>
                     <div className="space-y-4">
@@ -192,15 +192,17 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                                 </div>
                             </div>
                         </div>
-                        <button className="w-full px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700">
+                        <button className="w-full px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800">
                             Reset password
                         </button>
                     </div>
                 </div>
 
                 {/* Role */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">Role</label>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Role
+                    </label>
                     <div className="col-span-2">
                         <input
                             type="text"
@@ -208,14 +210,15 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             disabled
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
                         />
+                        <p className='p-1 text-sm text-gray-500'>Please note the role can be changed through <label className='font-bold'>Settings&gt;Team&gt;Edit Roles, click here</label> to change the role.</p>
                     </div>
                     <div></div> {/* Empty space for 4th column */}
                 </div>
 
                 {/* Country */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">
-                        Country <span className="text-red-500">*</span>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Country <span className="text-green-500 text-lg">*</span>
                     </label>
                     <div className="col-span-2 relative">
                         <select
@@ -223,10 +226,9 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             onChange={(e) => handleInputChange('country', e.target.value)}
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                         >
-                            <option value="Australia">🇦🇺 Australia</option>
+                            <option value="Australia">🇮🇳 India</option>
                             <option value="United States">🇺🇸 United States</option>
                             <option value="Canada">🇨🇦 Canada</option>
-                            <option value="United Kingdom">🇬🇧 United Kingdom</option>
                         </select>
                         <ChevronDownIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                     </div>
@@ -234,12 +236,12 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                 </div>
 
                 {/* Phone Number */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">
-                        Mobile Number <span className="text-red-500">*</span>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Mobile Number <span className="text-green-500 text-lg">*</span>
                     </label>
                     <div className="col-span-2 flex">
-                        <select className="px-3 py-2 border border-green-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <select className="px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
                             <option value="US">US</option>
                             <option value="AU">AU</option>
                             <option value="CA">CA</option>
@@ -249,17 +251,19 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             type="tel"
                             value={formData.phoneNumber}
                             onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
-                            className="flex-1 px-3 py-2 border-t border-b border-r border-green-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            className="flex-1 px-3 py-2 border-t border-b border-r border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                         />
                     </div>
-                    <button className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700">
+                    <button className="w-fit px-4 py-2 h-full text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800">
                         Verify
                     </button>
                 </div>
 
                 {/* Timezone */}
-                <div className="grid grid-cols-4 gap-4 items-center">
-                    <label className="text-sm font-medium text-gray-700">Timezone</label>
+                <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
+                    <label className="text-sm text-gray-700 font-bold">
+                        Timezone
+                    </label>
                     <div className="col-span-2 relative">
                         <ClockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                         <select
@@ -283,7 +287,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                 />
 
                 {/* Bottom Buttons */}
-                <div className="flex items-center justify-end space-x-3 pt-6">
+                <div className="flex items-center justify-end space-x-3">
                     <button
                         onClick={handleCancel}
                         className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
@@ -292,7 +296,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                     </button>
                     <button
                         onClick={handleSave}
-                        className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+                        className="px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800"
                     >
                         Save
                     </button>
