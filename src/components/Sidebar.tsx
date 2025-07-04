@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { CustomerIcon, DashboardIcon, MarketingIcon, ProductIcon, ReportingIcon, SearchIcon, SettingsIcon, SupportIcon, XMarkIcon,  } from './Icons';
+import { CustomerIcon, DashboardIcon, MarketingIcon, ProductIcon, ProfileSwitchIcon, ReportingIcon, SearchIcon, SettingsIcon, SupportIcon, XMarkIcon, } from './Icons';
+import ProfileIcon from './ProfileIcon';
 
 const Sidebar = () => {
     return (
-        <div className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col sticky top-0  ">
+        <div className="w-64 h-screen bg-white border-r border-gray-200 flex flex-col sticky top-0">
             {/* App Icon */}
             <div className="p-4">
                 <div className="w-10 h-10 bg-gray-300 rounded-lg"></div>
@@ -20,7 +21,7 @@ const Sidebar = () => {
                         className="w-full pl-10 pr-12 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
-                        ⌘K
+                        ⌘ K
                     </span>
                 </div>
             </div>
@@ -53,7 +54,7 @@ const Sidebar = () => {
             </div>
 
             {/* Usage Alert */}
-            <div className="mx-4 mb-4 p-3 bg-gray-50 rounded-lg relative">
+            <div className="mx-4 mb-1 p-3 bg-gray-50 rounded-lg relative">
                 <button className="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
                     <XMarkIcon className="w-4 h-4" />
                 </button>
@@ -77,13 +78,14 @@ const Sidebar = () => {
             </div>
 
             {/* User Profile */}
-            <div className="p-4 border-t border-gray-200">
-                <div className="flex items-center justify-between">
+            <div className="p-4 m-4 border rounded-xl border-gray-200">
+                <div className="flex items-start justify-between">
+                    <ProfileIcon/>
                     <div>
-                        <p className="text-sm font-medium text-gray-900">Clara Smith</p>
-                        <p className="text-xs text-gray-500">clara@bizclues.com</p>
+                        <p className="text-sm font-medium text-gray-900">Prathamesh B</p>
+                        <p className="text-xs text-gray-500">pb@company.com</p>
                     </div>
-                    {/* <ChevronUpIcon className="w-4 h-4 text-gray-400" /> */}
+                    <ProfileSwitchIcon className="w-4 h-4 text-gray-400" />
                 </div>
             </div>
         </div>

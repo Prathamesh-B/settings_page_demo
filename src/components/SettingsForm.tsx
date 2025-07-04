@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { PhotoUpload } from './PhotoUpload';
 import { BioEditor } from './BioEditor';
+import TooltipOnHover from './TooltipOnHover';
 
 interface FormData {
     firstName: string;
@@ -127,7 +128,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                         />
                     </div>
-                    <button className="w-fit  h-full px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-700">
+                    <button className="w-fit  h-full px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-lg hover:bg-green-800">
                         Verify
                     </button>
                 </div>
@@ -210,7 +211,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                             disabled
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-500"
                         />
-                        <p className='p-1 text-sm text-gray-500'>Please note the role can be changed through <label className='font-bold'>Settings&gt;Team&gt;Edit Roles, click here</label> to change the role.</p>
+                        <p className='p-1 text-sm text-gray-500'>Please note the role can be changed through <span className='font-bold'>Settings&gt;Team&gt;Edit Roles, <span className='underline underline-offset-2'>click here</span></span> to change the role.</p>
                     </div>
                     <div></div> {/* Empty space for 4th column */}
                 </div>
@@ -241,7 +242,7 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
                         Mobile Number <span className="text-green-500 text-lg">*</span>
                     </label>
                     <div className="col-span-2 flex">
-                        <select className="px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <select className="px-3 py-2 border-l border-t border-b border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
                             <option value="US">US</option>
                             <option value="AU">AU</option>
                             <option value="CA">CA</option>
@@ -261,9 +262,12 @@ const SettingsForm: React.FC<SettingsFormProps> = ({ onSave, onCancel }) => {
 
                 {/* Timezone */}
                 <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
-                    <label className="text-sm text-gray-700 font-bold">
-                        Timezone
-                    </label>
+                    <div className='flex items-center gap-0.5'>
+                        <label className="text-sm text-gray-700 font-bold">
+                            Timezone
+                        </label>
+                        <TooltipOnHover tooltipText='Please enter your current timezone' />
+                    </div>
                     <div className="col-span-2 relative">
                         <ClockIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                         <select

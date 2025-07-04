@@ -28,7 +28,7 @@ const SettingsHeader = () => {
                             className="w-80 pl-10 pr-12 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">
-                            ⌘K
+                            ⌘ K
                         </span>
                     </div>
                 </div>

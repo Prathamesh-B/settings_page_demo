@@ -1,0 +1,41 @@
+import React from 'react';
+
+type ProfileIconProps = {
+    imageUrl?: string;
+    initials?: string;
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
+};
+
+const ProfileIcon: React.FC<ProfileIconProps> = ({
+    imageUrl,
+    initials,
+    size = 'md',
+    className = '',
+}) => {
+    const sizeClasses = {
+        sm: 'h-8 w-8 text-xs',
+        md: 'h-10 w-10 text-sm',
+        lg: 'h-16 w-16 text-lg',
+    };
+
+    return (
+        <div
+            className={`rounded-full flex items-center justify-center bg-gray-100 overflow-hidden ${sizeClasses[size]} ${className}`}
+        >
+            {imageUrl ? (
+                <img
+                    src={imageUrl}
+                    alt="Profile"
+                    className="w-full h-full object-cover"
+                />
+            ) : (
+                <span className="font-medium text-gray-600">
+                    {initials?.slice(0, 2).toUpperCase() || 'PB'}
+                </span>
+            )}
+        </div>
+    );
+};
+
+export default ProfileIcon;

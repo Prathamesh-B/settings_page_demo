@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import type { DragEvent, ChangeEvent } from 'react';
 import { CloudArrowUpIcon } from './Icons';
+import ProfileIcon from './ProfileIcon';
+import TooltipOnHover from './TooltipOnHover';
 
 interface PhotoUploadProps {
     onFileSelect?: (file: File) => void;
@@ -67,16 +69,19 @@ const PhotoUpload: React.FC<PhotoUploadProps> = ({
     return (
         <div className="grid grid-cols-4 gap-4 items-start border-b border-gray-200 pb-5">
             <div>
-                <label className="text-sm text-gray-700 font-bold">
-                    Your photo <span className="text-green-500 text-lg">*</span>
-                </label>
+                <div className='flex items-center gap-0.5'>
+                    <label className="text-sm text-gray-700 font-bold">
+                        Your photo <span className="text-green-500 text-lg">*</span>
+                    </label>
+                    <TooltipOnHover tooltipText='Add your Profile Photo' />
+                </div>
                 <p className="text-sm text-gray-500 mt-1">This will be displayed on your profile.</p>
             </div>
-
-            <div className="col-span-2">
+            <div className="col-span-2 flex items-start gap-3">
+                <ProfileIcon size='lg' />
                 <div
-                    className={`relative border-2 rounded-lg p-6 text-center transition-colors cursor-pointer ${dragActive
-                        ? 'border-green-600 bg-green-50'
+                    className={`relative w-full border-2 rounded-lg p-6 text-center transition-colors cursor-pointer ${dragActive
+                        ? 'border-green-700 bg-green-50'
                         : 'border-green-600 hover:border-green-700'
                         }`}
                     onDragEnter={handleDrag}

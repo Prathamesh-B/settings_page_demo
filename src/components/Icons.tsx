@@ -1,3 +1,11 @@
+export const ProfileSwitchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+    return (
+        <svg {...props} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83333 12.5L10 16.6666L14.1667 12.5M5.83333 7.49998L10 3.33331L14.1667 7.49998" stroke="#717680" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    )
+}
+
 export const CloudArrowUpIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
     return (
         <svg {...props} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6,6 +14,7 @@ export const CloudArrowUpIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props)
 
     )
 }
+
 export const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
     return (
         <svg {...props} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
